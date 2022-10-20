@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/20 17:27:03 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/20 19:14:18 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 typedef struct t_list{
     int     data;
     int     index;
-    t_list  *next;
+    s_list  *next;
 }      s_list;
 
 //Moves

@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/20 17:15:35 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/10/20 19:13:11 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,8 @@ SRCS	= swap.c \
 			reverse_rotate.c \
 			rotate.c \
 			push.c \
+			utils.c \
+			checkers.c \
 
 OBJS	= $(SRCS:.c=.o)
 

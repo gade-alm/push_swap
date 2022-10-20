@@ -6,7 +6,16 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:01:34 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/20 18:01:34 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/20 19:13:53 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/push_swap.h"
+
+void    push_a(s_list **a, s_list **b)
+{
+}
+
+void    push_b(s_list **a, s_list **b)
+{
+}

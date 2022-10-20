@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 17:06:07 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/20 19:13:35 by gade-alm         ###   ########.fr       */
+/*   Created: 2022/10/20 19:12:21 by gade-alm          #+#    #+#             */
+/*   Updated: 2022/10/20 19:13:25 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    rotate_a(s_list **a)
-{}
+void	insert(s_list **list, int num)
+{
+	s_list	*temp;
 
-void    rotate_b(s_list **b)
-{}
-
-void    rotate_both(s_list **a, s_list **b)
-{}
+	temp = malloc(sizeof(s_list));
+	if (!temp)
+		return ;
+	temp->data = num;
+	temp->next = 0;
+	ft_lstadd_back(list, temp);
+}
