@@ -6,12 +6,29 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:02:21 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/20 19:14:04 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:38:51 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int check_dup(s_list **a, int num)
-{   
+int check_dup(t_list *a)
+{
+	t_list	*ptr;
+
+	while (a->next != NULL)
+	{
+		ptr = a->next;
+		while (ptr->next != NULL)
+		{
+			if (a->data == ptr->data)
+			{
+				ft_printf("Error\nNumber duplicated\n");
+				break;
+			}
+			ptr = ptr->next;
+		}
+		a = a->next;
+	}
+	return (1);
 }

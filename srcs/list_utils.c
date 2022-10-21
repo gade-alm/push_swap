@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 18:01:34 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/21 11:13:16 by gade-alm         ###   ########.fr       */
+/*   Created: 2022/10/21 10:24:08 by gade-alm          #+#    #+#             */
+/*   Updated: 2022/10/21 10:24:23 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	push_a(t_list **a, t_list **b)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*last;
 
-	if (!b)
+	if (!new)
 		return ;
-	tmp = *b;
-	*b = (*b)->next;
-	tmp->next = (*a);
-}
-
-void    push_b(t_list **a, t_list **b)
-{
-	t_list	*tmp;
-
-	if (!a)
+	if (!*lst)
+	{
+		*lst = new;
 		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = (*b);
+	}
+	last = *lst;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
 }

@@ -6,15 +6,15 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:16:20 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/20 17:33:16 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/21 09:49:45 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    swap_a(s_list **a)
+void    swap_a(t_list **a)
 {
-    s_list *tmp;
+    t_list *tmp;
 
     tmp = (*a)->next;
     (*a)->next = tmp->next;
@@ -23,9 +23,9 @@ void    swap_a(s_list **a)
     ft_printf("sa\n");
 }
 
-void    swap_b(s_list **b)
+void    swap_b(t_list **b)
 {
-    s_list *tmp;
+    t_list *tmp;
 
     tmp = (*b)->next;
     (*b)->next = tmp->next;
@@ -35,9 +35,9 @@ void    swap_b(s_list **b)
 }
 
 
-void    swap_both(s_list **a, s_list **b)
+void    swap_both(t_list **a, t_list **b)
 {
-    s_list *tmp;
+    t_list *tmp;
 
     tmp = (*a)->next;
     (*a)->next = tmp->next;

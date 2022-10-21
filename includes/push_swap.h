@@ -6,22 +6,33 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/20 19:14:18 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:37:08 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct t_list{
-    int     data;
-    int     index;
-    s_list  *next;
-}      s_list;
+# include "../libs/ft_printf/ft_printf.h"
+
+typedef struct s_list t_list;
+struct s_list{
+	int		data;
+	int		index;
+	t_list	*next;
+};
 
 //Moves
-void    swap_a(s_list **a);
-void    swap_b(s_list **b);
-void    swap_both(s_list **a, s_list **b);
+void	swap_a(t_list **a);
+void	swap_b(t_list **b);
+void	swap_both(t_list **a, t_list **b);
+
+//Utils
+int		ft_atoi(const char *str);
+t_list	*create_node(int num);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+int check_dup(t_list *a);
+void insert(t_list **head, int item);
+
 
 #endif
