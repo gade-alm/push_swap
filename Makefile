@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
+#    By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/21 11:42:16 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/10/23 11:17:03 by gabrieldeal      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,21 +31,28 @@ RM		= rm -rf
 
 PRINTF	= libs/ft_printf/libftprintf.a
 
+LIBFT = libs/Libft/libft.a
+
 all: $(NAME)
 
-$(NAME): $(PRINTF) $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -Llibs/ft_printf -l:libftprintf.a -o $(NAME)
+$(NAME): $(PRINTF) $(LIBFT) $(OBJS)
+		$(CC) $(CFLAGS) $(OBJS) -Llibs/ft_printf -l:libftprintf.a -Llibs/libft -l:libft.a -o $(NAME)
 
 $(PRINTF):
 		make -C libs/ft_printf
 
+$(LIBFT):
+		make -C libs/libft
+		
 clean: 
 	$(RM) $(OBJS)
 	make clean -C libs/ft_printf
+	make clean -C libs/libft
 	$(RM) a.out
 
 fclean: clean
 	$(RM) $(NAME) $(OBJS)
 	make fclean -C libs/ft_printf
+	make fclean -C libs/libft
 
 re: fclean all

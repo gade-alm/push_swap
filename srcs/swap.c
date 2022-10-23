@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:16:20 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/21 09:49:45 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:02:25 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,16 @@
 void    swap_a(t_list **a)
 {
     t_list *tmp;
-
+	(*a)->data = 1;
+	
     tmp = (*a)->next;
+	ft_printf("tmp: %i\n a:%i\n", tmp->data,(*a)->data);
     (*a)->next = tmp->next;
+	ft_printf("tmp: %i\n a:%i\n", tmp->data,(*a)->data);
     tmp->next = *a;
+	ft_printf("tmp: %i\n a:%i\n", tmp->data,(*a)->data);
     *a = tmp;
+	printf("tmp: %i\n a:%i\n", tmp->data,(*a)->data);
     ft_printf("sa\n");
 }
 

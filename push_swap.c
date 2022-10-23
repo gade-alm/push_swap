@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/21 11:42:34 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:19:49 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,11 @@ void insert(t_list **head, int item)
     *head = temp;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
-	t_list *teste=NULL;
-	insert(&teste, 5);
-    insert(&teste, 7);
-    insert(&teste, 4);
-    insert(&teste, 1);
-    insert(&teste, 4);
+	// t_list	**a;
 	
-	check_dup(teste);
+	(void)argv;
+	if (argc == 1)
+		ft_printf("Error\nWrong number of arguments\n");
 }

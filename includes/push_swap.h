@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/21 11:37:08 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/23 11:02:21 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libs/ft_printf/ft_printf.h"
+#include <stdio.h>
 
 typedef struct s_list t_list;
 struct s_list{
@@ -32,6 +33,7 @@ int		ft_atoi(const char *str);
 t_list	*create_node(int num);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int check_dup(t_list *a);
+void printList(t_list *n);
 void insert(t_list **head, int item);
 
 
