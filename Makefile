@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+         #
+#    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/23 11:17:03 by gabrieldeal      ###   ########.fr        #
+#    Updated: 2022/10/25 11:46:53 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS	= push_swap.c \
 		srcs/push.c \
 		srcs/utils.c \
 		srcs/checkers.c \
-		srcs/list_utils.c \
+		srcs/algo2.c \
+		srcs/parse_numbers.c \
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -25,7 +26,7 @@ NAME	= push_swap
 
 CC		= gcc
 
-CFLAGS	= -Wall -Wextra -Werror #-g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 
 RM		= rm -rf
 

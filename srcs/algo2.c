@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkers.c                                         :+:      :+:    :+:   */
+/*   algo2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 19:02:21 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/25 10:42:35 by gade-alm         ###   ########.fr       */
+/*   Created: 2022/10/25 10:36:43 by gade-alm          #+#    #+#             */
+/*   Updated: 2022/10/25 11:11:18 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	check_dup(t_list *a)
+void	algo2(t_list **a)
 {
-	t_list	*ptr;
-
-	while (a->next != NULL)
-	{
-		ptr = a->next;
-		while (ptr->next != NULL)
-		{
-			if (a->data == ptr->data)
-			{
-				ft_printf("Error\nNumber duplicated\n");
-				break ;
-			}
-			ptr = ptr->next;
-		}
-		a = a->next;
-	}
-	return (1);
+	if ((*a)->data > (*a)->next->data)
+		swap_a(a);
 }

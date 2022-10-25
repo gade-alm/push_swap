@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:01:34 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/21 11:13:16 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:02:47 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	push_a(t_list **a, t_list **b)
 	tmp->next = (*a);
 }
 
-void    push_b(t_list **a, t_list **b)
+void	push_b(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 
