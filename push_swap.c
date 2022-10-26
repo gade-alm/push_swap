@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/25 13:12:12 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:51:06 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ void	insert(t_list **head, int item)
 
 	temp = malloc(sizeof(t_list));
 	temp->data = item;
-	temp->next = *head;
-	*head = temp;
+	temp->next = NULL;
+	temp->index = -1;
+	ft_lstadd_back(head, temp);
 }
 
 int	main(int argc, char **argv)
@@ -27,18 +28,26 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	int		i;
 	int		x;
+	t_list	*b;
 
 	i = 0;
 	a = NULL;
-	(void)argv;
 	if (argc == 1)
 		ft_printf("Error\nWrong number of arguments\n");
 	while (argv[++i])
 	{	
 		x = ft_atoi(argv[i]);
-		printf("\n");
 		insert(&a, x);
 	}
+	if (argc == 3)
+		algo2(&a);
+	if (argc == 4)
+		algo3(&a);
 	printList(a);
-	free (a);
+	while (a)
+	{
+		b = a;
+		a = a->next;
+		free (b);
+	}
 }

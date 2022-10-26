@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
+#    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/25 11:46:53 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/10/26 21:29:21 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS	= push_swap.c \
 		srcs/utils.c \
 		srcs/checkers.c \
 		srcs/algo2.c \
+		srcs/algo3.c \
 		srcs/parse_numbers.c \
 
 OBJS	= $(SRCS:.c=.o)
@@ -37,13 +38,14 @@ LIBFT = libs/Libft/libft.a
 all: $(NAME)
 
 $(NAME): $(PRINTF) $(LIBFT) $(OBJS)
-		$(CC) $(CFLAGS) $(OBJS) -Llibs/ft_printf -l:libftprintf.a -Llibs/libft -l:libft.a -o $(NAME)
+		$(CC) $(CFLAGS) $(OBJS) -Llibs/ft_printf -l:libftprintf.a -Llibs/libft -lft -o $(NAME)
 
 $(PRINTF):
 		make -C libs/ft_printf
 
 $(LIBFT):
 		make -C libs/libft
+		make bonus -C libs/libft
 		
 clean: 
 	$(RM) $(OBJS)

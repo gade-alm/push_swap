@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/25 11:10:10 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:50:35 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,32 @@
 # define PUSH_SWAP_H
 
 # include "../libs/ft_printf/ft_printf.h"
+# include "../libs/libft/libft.h"
 # include <stdio.h>
 
-typedef struct s_list	t_list;
-struct s_list{
-	int		data;
-	int		index;
-	t_list	*next;
-};
+// typedef struct s_pslist	t_pslist;
+// struct s_pslist{
+// 	int			data;
+// 	int			index;
+// 	t_pslist	*next;
+// };
 //Algorithms
 void	algo2(t_list **a);
+void	algo3(t_list **a);
 
 //Moves
 void	swap_a(t_list **a);
 void	swap_b(t_list **b);
 void	swap_both(t_list **a, t_list **b);
+void	push_a(t_list **a, t_list **b);
+void	push_b(t_list **a, t_list **b);
+void	r_rotate_a(t_list **a);
+void	r_rotate_b(t_list **b);
+void	r_rotate_both(t_list **a, t_list **b);
+void	rotate_a(t_list **a);
+void	rotate_b(t_list **b);
+void	rotate_both(t_list **a, t_list **b);
+
 
 //Utils
 int		ft_atoi(const char *str);

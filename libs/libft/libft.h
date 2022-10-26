@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 15:21:14 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/03/09 10:56:46 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:51:33 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 typedef struct s_list
 {
 	void			*content;
+	int				data;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
