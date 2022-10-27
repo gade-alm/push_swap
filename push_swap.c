@@ -6,48 +6,26 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/27 16:41:01 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:43:48 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	insert(t_list **head, int item)
-{
-	t_list	*temp;
-
-	temp = malloc(sizeof(t_list));
-	temp->data = item;
-	temp->next = NULL;
-	temp->index = -1;
-	ft_lstadd_back(head, temp);
-}
-
 int	main(int argc, char **argv)
 {
-	t_list	*a;
-	int		i;
 	int		x;
-	t_list	*b;
+	t_list	*a;
 
-	i = 0;
 	a = NULL;
 	if (argc == 1)
 		ft_printf("Error\nWrong number of arguments\n");
-	while (argv[++i])
-	{	
-		x = ft_atoi(argv[i]);
-		insert(&a, x);
-	}
-	if (argc == 3)
+	parse_values(argv, &a);
+	x = ft_lstsize(a);
+	if (x == 2)
 		swap_a(&a);
-	if (argc == 4)
+	if (x == 3)
 		algo3(&a);
-	printList(a);
-	while (a)
-	{
-		b = a;
-		a = a->next;
-		free (b);
-	}
+	printlist(a);
+	exit_prog(0, &a);
 }

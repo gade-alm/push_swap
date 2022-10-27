@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/26 21:50:35 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/27 17:48:04 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/libft/libft.h"
+# include <limits.h>
 # include <stdio.h>
 
 // typedef struct s_pslist	t_pslist;
@@ -46,8 +47,12 @@ int		ft_atoi(const char *str);
 t_list	*create_node(int num);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		check_dup(t_list *a);
-void	printList(t_list *n);
+void	printlist(t_list *n);
+long	parse_args(char	**str);
+void	parse_values(char **argv, t_list **a);
 void	insert(t_list **head, int item);
+void	exit_prog(int i, t_list **a);
+void	free_list(t_list **a);
 
 
 #endif
