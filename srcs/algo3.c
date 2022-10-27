@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 21:19:35 by gabriel           #+#    #+#             */
-/*   Updated: 2022/10/26 21:54:45 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/27 16:49:38 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	algo3(t_list **a)
 	(*a)->next->next->data) && (*a)->data < (*a)->next->next->data)
 		swap_a(a);
 	if (((*a)->data > (*a)->next->data) && ((*a)->next->data < \
-	(*a)->next->next->data) && (*a)->data < (*a)->next->next->data)
+	(*a)->next->next->data) && (*a)->data > (*a)->next->next->data)
 		rotate_a(a);
-	if (((*a)->data < (*a)->next->data) && ((*a)->next->data < \
+	if (((*a)->data > (*a)->next->data) && ((*a)->next->data > \
 	(*a)->next->next->data) && (*a)->data > (*a)->next->next->data)
 	{
 		swap_a(a);
