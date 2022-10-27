@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/27 17:48:04 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/27 17:51:16 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 # include <limits.h>
 # include <stdio.h>
 
-// typedef struct s_pslist	t_pslist;
-// struct s_pslist{
-// 	int			data;
-// 	int			index;
-// 	t_pslist	*next;
-// };
 //Algorithms
 void	algo2(t_list **a);
 void	algo3(t_list **a);

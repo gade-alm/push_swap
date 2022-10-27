@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:35:55 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/27 17:48:25 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/27 19:04:15 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ long	parse_args(char	**str)
 	while (**str >= '0' && **str <= '9')
 	{
 		num = (num * 10 + (conv * (**str - '0')));
+		if (num > INT_MAX || num < INT_MIN)
+			return (2147483648);
 		*str += 1;
 	}
 	if (!(**str == 32 || (**str > 8 && **str < 14)) && **str)
@@ -47,6 +49,10 @@ void	parse_values(char **argv, t_list **a)
 	while (argv[++i])
 	{
 		str = argv[i];
+		while (*str == 32 || (*str > 8 && *str < 14))
+			str++;
+		if (((*str == '+' || *str == '-') || !*str))
+			exit_prog(1, a);
 		while (*str)
 		{
 			num = parse_args(&str);
