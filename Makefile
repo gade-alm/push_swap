@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/27 16:46:13 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/10/28 16:33:24 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,11 @@ RM		= rm -rf
 
 PRINTF	= libs/ft_printf/libftprintf.a
 
-LIBFT = libs/Libft/libft.a
+LIBFT = libs/libft/libft.a
 
 all: $(NAME)
 
-$(NAME): $(PRINTF) $(LIBFT) $(OBJS)
+$(NAME):	$(PRINTF) $(LIBFT) $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -Llibs/ft_printf -lftprintf -Llibs/libft -lft -o $(NAME)
 
 $(PRINTF):
@@ -50,7 +50,6 @@ clean:
 	$(RM) $(OBJS)
 	make clean -C libs/ft_printf
 	make clean -C libs/libft
-	$(RM) a.out
 
 fclean: clean
 	$(RM) $(NAME) $(OBJS)
