@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/27 17:51:16 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:49:56 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	rotate_both(t_list **a, t_list **b);
 //Utils
 int		ft_atoi(const char *str);
 t_list	*create_node(int num);
+void	check_invalid(char *str, t_list **a);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		check_dup(t_list *a);
 void	printlist(t_list *n);

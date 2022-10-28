@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:35:55 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/27 19:04:15 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:54:40 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,10 @@ void	parse_values(char **argv, t_list **a)
 	while (argv[++i])
 	{
 		str = argv[i];
+		check_invalid(str, a);
 		while (*str == 32 || (*str > 8 && *str < 14))
 			str++;
-		if (((*str == '+' || *str == '-') || !*str))
+		if (((*str == '+' || *str == '-') && (*str + 1) >= '0' && (*str + 1 <= '9')) || !*str)
 			exit_prog(1, a);
 		while (*str)
 		{
@@ -61,4 +62,18 @@ void	parse_values(char **argv, t_list **a)
 			insert(a, num);
 		}
 	}
+}
+
+void	check_invalid(char *str, t_list **a)
+{
+	int	i;
+
+	i = -1;
+	while (str[++i])
+	{
+		if (str[i] == '-' || str[i] == '+')
+			if (str[i + 1] < '0' || str[i + 1] > '9')
+				exit_prog(1, a);
+	}
+	return ;
 }
