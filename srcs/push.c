@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:01:34 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/26 21:50:57 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/31 08:13:09 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	push_a(t_list **a, t_list **b)
 
 	if (!b)
 		return ;
-	tmp = *b;
-	*b = (*b)->next;
-	tmp->next = (*a);
+	tmp = (*a)->next;
+	(*a)->next = *b;
+	(*b) = *a;
+	*a = tmp;
+	ft_printf("pa\n");
 }
 
 void	push_b(t_list **a, t_list **b)
@@ -29,7 +31,9 @@ void	push_b(t_list **a, t_list **b)
 
 	if (!a)
 		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = (*b);
+	tmp = (*b)->next;
+	(*b)->next = *a;
+	*a = *b;
+	*b = tmp;
+	ft_printf("pb\n");
 }

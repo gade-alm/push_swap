@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/27 17:43:48 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:46:52 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,27 @@
 
 int	main(int argc, char **argv)
 {
-	int		x;
 	t_list	*a;
+	t_list	*b;
 
 	a = NULL;
+	b = NULL;
 	if (argc == 1)
 		ft_printf("Error\nWrong number of arguments\n");
 	parse_values(argv, &a);
-	x = ft_lstsize(a);
-	if (x == 2)
-		swap_a(&a);
-	if (x == 3)
-		algo3(&a);
+	check_dup(a);
+	if (check_order(a) == 0)
+	{
+		if (ft_lstsize(a) == 2)
+			algo2(&a);
+		if (ft_lstsize(a) == 3)
+			algo3(&a);
+		if (ft_lstsize(a) == 4)
+			algo4(&a, &b);
+	}
+	ft_printf("a:\n");
 	printlist(a);
+	printf("\nb:\n");
+	printlist(b);
 	exit_prog(0, &a);
 }

@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 15:21:14 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/26 21:51:33 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/31 10:27:38 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ typedef struct s_list
 {
 	void			*content;
 	int				data;
-	int				index;
+	int				head;
 	struct s_list	*next;
+	int				min;
+	int				max;
 }					t_list;
 
 void	*ft_memset(void *b, int c, size_t len);
