@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/31 11:34:12 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/31 12:08:37 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 void		algo2(t_list **a);
 void		algo3(t_list **a);
 void		algo4(t_list **a, t_list **b);
+void		algo5(t_list **a, t_list **b);
 
 //Moves
 void		swap_a(t_list **a);

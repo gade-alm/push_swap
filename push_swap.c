@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/31 11:46:52 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/31 18:18:19 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,12 @@ int	main(int argc, char **argv)
 			algo3(&a);
 		if (ft_lstsize(a) == 4)
 			algo4(&a, &b);
+		if (lt_lstsize(a) == 5)
+			algo5(&a, &b);
 	}
-	ft_printf("a:\n");
-	printlist(a);
-	printf("\nb:\n");
-	printlist(b);
+	// ft_printf("a:\n");
+	// printlist(a);
+	// printf("\nb:\n");
+	// printlist(b);
 	exit_prog(0, &a);
 }

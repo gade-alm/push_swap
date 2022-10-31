@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:06:13 by gabriel           #+#    #+#             */
-/*   Updated: 2022/10/31 11:35:15 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/31 18:08:50 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,25 @@ void	algo4(t_list **a, t_list **b)
 	{
 		push_a(b, a);
 	}
+}
+
+void	algo5(t_list **a, t_list **b)
+{
+	min_max_num((*a));
+	while ((*a)->data != listcall()->min)
+		rotate_a(a);
+	if ((*a)->data == listcall()->min)
+		push_b(b, a);
+	while ((*a)->data != listcall()->max)
+		rotate_a(a);
+	if ((*a)->data == listcall()->max)
+		push_b(b, a);
+	algo3(a);
+	if ((*b)->data == listcall()->max)
+	{
+		push_a(b, a);
+		rotate_a(a);
+	}
+	if ((*b)->data == listcall()->min)
+		push_a(b, a);
 }
