@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
+#    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/30 11:56:15 by gabriel          ###   ########.fr        #
+#    Updated: 2022/11/22 17:05:32 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS	= push_swap.c \
 		srcs/algo3.c \
 		srcs/algo4.c \
 		srcs/parse_numbers.c \
+		srcs/big_algo.c \
 
 OBJS	= $(SRCS:.c=.o)
 

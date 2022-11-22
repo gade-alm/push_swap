@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo4.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:06:13 by gabriel           #+#    #+#             */
-/*   Updated: 2022/10/31 18:08:50 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/11/22 17:04:05 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	min_max_num(t_list *a)
 {
 	listcall()->min = 214784368;
 	listcall()->max = -214784362;
-
 	while (a)
 	{
 		if (listcall()->min > a->data)
@@ -40,9 +39,7 @@ void	algo4(t_list **a, t_list **b)
 		rotate_a(a);
 	}
 	else if ((*b)->data == listcall()->min)
-	{
 		push_a(b, a);
-	}
 }
 
 void	algo5(t_list **a, t_list **b)

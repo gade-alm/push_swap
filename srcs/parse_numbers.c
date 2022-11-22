@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:35:55 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/31 11:23:18 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/11/15 18:27:19 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,11 @@ void	parse_values(char **argv, t_list **a)
 		while (*str == 32 || (*str > 8 && *str < 14))
 			str++;
 		if (((*str == '+' || *str == '-') && (*(str + 1) < '0' \
-		|| *(str + 1) > '9')) || !*str)
+		|| *(str + 1) > '9')))
 			exit_prog(1, a);
 		while (*str)
 		{
 			num = parse_args(&str);
-			if (num > INT_MAX)
-				exit_prog(1, a);
 			insert(a, num);
 		}
 	}

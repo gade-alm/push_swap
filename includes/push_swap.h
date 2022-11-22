@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/31 12:08:37 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/11/22 17:25:26 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void		rotate_both(t_list **a, t_list **b);
 int			ft_atoi(const char *str);
 t_list		*create_node(int num);
 t_list		*listcall(void);
+int			find_max_bits(t_list **a);
+void		binary_sort(t_list **a, t_list **b);
 int			check_order(t_list *a);
 void		check_invalid(char *str, t_list **a);
 void		ft_lstadd_back(t_list **lst, t_list *new);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/31 18:18:19 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/11/22 17:27:35 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1)
-		ft_printf("Error\nWrong number of arguments\n");
+	if (argc <= 1)
+		exit_prog(0, &a);
 	parse_values(argv, &a);
 	check_dup(a);
 	if (check_order(a) == 0)
@@ -31,12 +31,14 @@ int	main(int argc, char **argv)
 			algo3(&a);
 		if (ft_lstsize(a) == 4)
 			algo4(&a, &b);
-		if (lt_lstsize(a) == 5)
+		if (ft_lstsize(a) == 5)
 			algo5(&a, &b);
+		if (ft_lstsize(a) == 6)
+			binary_sort(&a, &b);
 	}
-	// ft_printf("a:\n");
-	// printlist(a);
-	// printf("\nb:\n");
-	// printlist(b);
+	ft_printf("a:\n");
+	printlist(a);
+	printf("\nb:\n");
+	printlist(b);
 	exit_prog(0, &a);
 }
