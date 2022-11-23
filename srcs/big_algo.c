@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:14:32 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/11/23 16:47:49 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/11/23 18:17:49 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ void	binary_sort(t_list **a, t_list **b)
 	{
 		if (tmp->data & 1)
 		{
-			while (i >= 0)
-			{
-				r_rotate_a(a);
-				i--;
-			}
 			printf("%i\n", i);
+			if (i >= 0)
+				while (i != 0)
+				{
+					rotate_a(a);
+						i--;
+				}
 			if (i == 0)
 				push_b(b, a);
 		}
