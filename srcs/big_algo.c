@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:14:32 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/11/23 18:17:49 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:48:26 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,30 @@ void	binary_sort(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 	int		i;
+	int		max_bits;
+	int		len;
+	int		j;
 
-	i = 0;
-	tmp = *a;
-	(void)b;
-	while (tmp)
+	len = ft_lstsize(*a);
+	i = -1;
+	max_bits = find_max_bits(a);
+	while (++i < max_bits)
 	{
-		if (tmp->data & 1)
+		j = -1;
+		while (++j < len)
 		{
-			printf("%i\n", i);
-			if (i >= 0)
-				while (i != 0)
-				{
-					rotate_a(a);
-						i--;
-				}
-			if (i == 0)
+			tmp = *a;
+			if ((tmp->data >> i & 1) == 1)
+				rotate_a(a);
+			else
 				push_b(b, a);
 		}
-		tmp = tmp->next;
-		i++;
+		while (ft_lstsize(*b) != 0)
+			push_a(a, b);
 	}
+}
+
+void	number_index(t_list **a)
+{
+	
 }
