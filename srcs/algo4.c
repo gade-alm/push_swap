@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:06:13 by gabriel           #+#    #+#             */
-/*   Updated: 2022/11/22 17:04:05 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:49:40 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	min_max_num(t_list *a)
 {
-	listcall()->min = 214784368;
-	listcall()->max = -214784362;
+	listcall()->min = INT_MAX;
+	listcall()->max = INT_MIN;
 	while (a)
 	{
 		if (listcall()->min > a->data)
@@ -35,11 +35,11 @@ void	algo4(t_list **a, t_list **b)
 	algo3(a);
 	if ((*b)->data == listcall()->max)
 	{
-		push_a(b, a);
+		push_a(a, b);
 		rotate_a(a);
 	}
 	else if ((*b)->data == listcall()->min)
-		push_a(b, a);
+		push_a(a, a);
 }
 
 void	algo5(t_list **a, t_list **b)
@@ -56,9 +56,9 @@ void	algo5(t_list **a, t_list **b)
 	algo3(a);
 	if ((*b)->data == listcall()->max)
 	{
-		push_a(b, a);
+		push_a(a, b);
 		rotate_a(a);
 	}
 	if ((*b)->data == listcall()->min)
-		push_a(b, a);
+		push_a(a, b);
 }

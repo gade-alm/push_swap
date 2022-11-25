@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:12:21 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/30 20:59:47 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/11/25 18:46:01 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	insert(t_list **head, int item)
 	temp = malloc(sizeof(t_list));
 	temp->data = item;
 	temp->next = NULL;
-	temp->head = -1;
+	temp->index = -1;
 	ft_lstadd_back(head, temp);
 }
 
@@ -31,6 +31,7 @@ t_list	*create_node(int num)
 	if (!temp)
 		return (NULL);
 	temp->data = num;
+	temp->index = -1;
 	temp->next = NULL;
 	return (temp);
 }

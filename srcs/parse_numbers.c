@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:35:55 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/11/15 18:27:19 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:47:43 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ long	parse_args(char	**str)
 	{
 		num = (num * 10 + (conv * (**str - '0')));
 		if (num > INT_MAX || num < INT_MIN)
-			return (2147483648);
+			exit_prog(1, &listcall()->next);
 		*str += 1;
 	}
 	while (**str == 32 || (**str > 8 && **str < 14))
 		*str += 1;
 	if (**str && (**str < '0' || **str > '9'))
-		return (2147483648);
+		exit_prog(1, &listcall()->next);
 	return (num);
 }
 
