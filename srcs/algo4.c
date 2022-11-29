@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:06:13 by gabriel           #+#    #+#             */
-/*   Updated: 2022/11/25 18:49:40 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:39:27 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,20 @@ void	algo4(t_list **a, t_list **b)
 		rotate_a(a);
 	}
 	else if ((*b)->data == listcall()->min)
-		push_a(a, a);
+		push_a(a, b);
 }
 
 void	algo5(t_list **a, t_list **b)
 {
 	min_max_num((*a));
-	while ((*a)->data != listcall()->min)
+	while ((*a)->data != listcall()->min && (*a)->data != listcall()->max)
 		rotate_a(a);
-	if ((*a)->data == listcall()->min)
-		push_b(b, a);
-	while ((*a)->data != listcall()->max)
+	push_b(b, a);
+	while ((*a)->data != listcall()->min && (*a)->data != listcall()->max)
 		rotate_a(a);
-	if ((*a)->data == listcall()->max)
-		push_b(b, a);
+	push_b(b, a);
 	algo3(a);
-	if ((*b)->data == listcall()->max)
-	{
-		push_a(a, b);
-		rotate_a(a);
-	}
-	if ((*b)->data == listcall()->min)
-		push_a(a, b);
+	while (*b)
+		if ((*b)->data == listcall()->max || ((*b)->data == listcall()->min))
+			push_a(a, b);
 }
