@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:12:21 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/11/29 16:49:41 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:17:50 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,6 @@ t_list	*create_node(int num)
 	temp->index = -1;
 	temp->next = NULL;
 	return (temp);
-}
-
-//APAGAR DEPOIS
-void	printlist(t_list *n)
-{
-	while (n != NULL)
-	{
-		ft_printf("%d\n", n->data);
-		n = n->next;
-	}
 }
 
 void	exit_prog(int i, t_list **a)

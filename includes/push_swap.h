@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/11/25 18:46:54 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:17:58 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int			check_order(t_list *a);
 void		check_invalid(char *str, t_list **a);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 int			check_dup(t_list *a);
-void		printlist(t_list *n);
 long		parse_args(char	**str);
 void		parse_values(char **argv, t_list **a);
 void		insert(t_list **head, int item);

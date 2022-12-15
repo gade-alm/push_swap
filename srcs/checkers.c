@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:02:21 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/31 12:05:20 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/12/15 15:18:15 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	check_dup(t_list *a)
 		while (ptr)
 		{
 			if (a->data == ptr->data)
-			{
-				ft_printf("Error\nNumber duplicated\n");
 				exit_prog(1, &a);
-			}
 			ptr = ptr->next;
 		}
 		a = a->next;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:16:20 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/26 21:51:02 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/12/15 15:36:23 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	swap_b(t_list **b)
 	*b = tmp;
 	ft_printf("sb\n");
 }
-
 
 void	swap_both(t_list **a, t_list **b)
 {
