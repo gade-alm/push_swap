@@ -6,11 +6,25 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:35:55 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/15 15:35:47 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:10:36 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	is_nbr(char *s, t_list **a)
+{
+	while (*s == 32 || (*s > 8 && *s < 14))
+		s++;
+	if (*s == '+' || *s == '-')
+		s++;
+	if (*s < '0' || *s > '9')
+		exit_prog(1, a);
+	while (*s >= '0' && *s <= '9')
+		s++;
+	if (*s != 32 && (*s <= 8 || *s >= 14) && *s)
+		exit_prog(1, a);
+}
 
 long	parse_args(char	**str)
 {
@@ -51,11 +65,7 @@ void	parse_values(char **argv, t_list **a)
 		str = argv[i];
 		while (*str)
 		{
-			while (*str == 32 || (*str > 8 && *str < 14))
-				str++;
-			if (((*str == '+' || *str == '-') && (*(str + 1) < '0' \
-			|| *(str + 1) > '9')))
-				exit_prog(1, a);
+			is_nbr(str, a);
 			num = parse_args(&str);
 			insert(a, num);
 		}

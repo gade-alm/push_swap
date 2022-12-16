@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/15 15:48:50 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:51:26 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		exit_prog(0, &a);
 	parse_values(argv, &a);
-	check_dup(a);
+	if (check_dup(a) == 0)
+		exit_prog(1, &a);
 	if (check_order(a) == 0)
 	{
 		if (ft_lstsize(a) == 2)

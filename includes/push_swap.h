@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/15 15:17:58 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:59:12 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void		rotate_both(t_list **a, t_list **b);
 int			ft_atoi(const char *str);
 t_list		*create_node(int num);
 t_list		*listcall(void);
+void		is_nbr(char *s, t_list **a);
 int			find_max_bits(t_list **a);
 void		number_index(t_list **a);
 void		binary_sort(t_list **a, t_list **b);
@@ -48,6 +49,7 @@ int			check_order(t_list *a);
 void		check_invalid(char *str, t_list **a);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 int			check_dup(t_list *a);
+void		printlist(t_list *n);
 long		parse_args(char	**str);
 void		parse_values(char **argv, t_list **a);
 void		insert(t_list **head, int item);

@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:06:13 by gabriel           #+#    #+#             */
-/*   Updated: 2022/11/29 16:39:27 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:30:29 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,15 @@ void	algo5(t_list **a, t_list **b)
 	while ((*a)->data != listcall()->min && (*a)->data != listcall()->max)
 		rotate_a(a);
 	push_b(b, a);
+	min_max_num((*a));
 	while ((*a)->data != listcall()->min && (*a)->data != listcall()->max)
 		rotate_a(a);
 	push_b(b, a);
 	algo3(a);
 	while (*b)
-		if ((*b)->data == listcall()->max || ((*b)->data == listcall()->min))
-			push_a(a, b);
+	{
+		push_a(a, b);
+		if ((*a)->data > (*a)->next->data)
+			rotate_a(a);
+	}
 }
