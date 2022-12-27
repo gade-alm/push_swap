@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:35:55 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/16 17:34:01 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/27 16:07:31 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,15 @@ void	parse_values(char **argv, t_list **a)
 	char	*str;
 
 	i = 0;
-	while (argv[++i])
+	while (argv[++i] && argv)
 	{
 		str = argv[i];
+		if (!*str)
+			exit_prog(1, a);
 		while (*str)
 		{
+			while (*str == 32)
+				str++;
 			is_nbr(str, a);
 			num = parse_args(&str);
 			insert(a, num);
