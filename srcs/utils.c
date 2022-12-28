@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:12:21 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/15 17:12:19 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/28 18:27:03 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,12 @@ void	insert(t_list **head, int item)
 	t_list	*temp;
 
 	temp = malloc(sizeof(t_list));
+	if (!temp)
+		return ;
 	temp->data = item;
 	temp->next = NULL;
 	temp->index = -1;
 	ft_lstadd_back(head, temp);
-}
-
-t_list	*create_node(int num)
-{
-	t_list	*temp;
-
-	temp = malloc(sizeof(t_list));
-	if (!temp)
-		return (NULL);
-	temp->data = num;
-	temp->index = -1;
-	temp->next = NULL;
-	return (temp);
 }
 
 void	exit_prog(int i, t_list **a)
@@ -54,4 +43,11 @@ void	free_list(t_list **a)
 		*a = (*a)->next;
 		free (tmp);
 	}
+}
+
+t_list	*listcall(void)
+{
+	static t_list	list;
+
+	return (&list);
 }

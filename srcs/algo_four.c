@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo4.c                                            :+:      :+:    :+:   */
+/*   algo_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 11:06:13 by gabriel           #+#    #+#             */
-/*   Updated: 2022/12/16 16:30:29 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/28 18:23:26 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	min_max_num(t_list *a)
 	}
 }
 
-void	algo4(t_list **a, t_list **b)
+void	algo_four(t_list **a, t_list **b)
 {
 	min_max_num((*a));
 	while ((*a)->data != listcall()->min && (*a)->data != listcall()->max)
 		rotate_a(a);
 	push_b(b, a);
-	algo3(a);
+	algo_three(a);
 	if ((*b)->data == listcall()->max)
 	{
 		push_a(a, b);
@@ -42,7 +42,7 @@ void	algo4(t_list **a, t_list **b)
 		push_a(a, b);
 }
 
-void	algo5(t_list **a, t_list **b)
+void	algo_five(t_list **a, t_list **b)
 {
 	min_max_num((*a));
 	while ((*a)->data != listcall()->min && (*a)->data != listcall()->max)
@@ -52,7 +52,7 @@ void	algo5(t_list **a, t_list **b)
 	while ((*a)->data != listcall()->min && (*a)->data != listcall()->max)
 		rotate_a(a);
 	push_b(b, a);
-	algo3(a);
+	algo_three(a);
 	while (*b)
 	{
 		push_a(a, b);

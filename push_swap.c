@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/22 17:32:16 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/28 18:26:46 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	main(int argc, char **argv)
 	if (check_order(a) == 0)
 	{
 		if (ft_lstsize(a) == 2)
-			algo2(&a);
+			swap_a(&a);
 		if (ft_lstsize(a) == 3)
-			algo3(&a);
+			algo_three(&a);
 		if (ft_lstsize(a) == 4)
-			algo4(&a, &b);
+			algo_four(&a, &b);
 		if (ft_lstsize(a) == 5)
-			algo5(&a, &b);
+			algo_five(&a, &b);
 		if (ft_lstsize(a) >= 6)
 			binary_sort(&a, &b);
 	}

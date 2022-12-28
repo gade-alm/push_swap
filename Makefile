@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/12/27 15:50:55 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/12/28 18:36:55 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,8 @@ SRCS	= push_swap.c \
 		srcs/push.c \
 		srcs/utils.c \
 		srcs/checkers.c \
-		srcs/algo2.c \
-		srcs/algo3.c \
-		srcs/algo4.c \
+		srcs/algo_three.c \
+		srcs/algo_four.c \
 		srcs/parse_numbers.c \
 		srcs/big_algo.c \
 
@@ -27,9 +26,9 @@ OBJS	= $(SRCS:.c=.o)
 
 NAME	= push_swap
 
-CC		= gcc
+CC		= cc
 
-CFLAGS	= -Wall -Wextra -Werror -g #-fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 
 RM		= rm -rf
 
