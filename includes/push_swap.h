@@ -6,15 +6,15 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:17:13 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/28 18:27:20 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:58:12 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libs/ft_printf/ft_printf.h"
-# include "../libs/libft/libft.h"
+# include "ft_printf.h"
+# include "libft.h"
 # include <limits.h>
 # include <stdio.h>
 

@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 11:35:55 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/28 17:31:11 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/29 16:25:46 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	is_nbr(char *s, t_list **a)
 {
-	while (*s == 32 || (*s > 8 && *s < 14))
+	while (*s == ' ' || (*s > 8 && *s < 14))
 		s++;
 	if (*s == '+' || *s == '-')
 		s++;
@@ -22,7 +22,7 @@ void	is_nbr(char *s, t_list **a)
 		exit_prog(1, a);
 	while (*s >= '0' && *s <= '9')
 		s++;
-	if (*s != 32 && (*s <= 8 || *s >= 14) && *s)
+	if (*s != ' ' && (*s <= 8 || *s >= 14) && *s)
 		exit_prog(1, a);
 }
 
@@ -46,9 +46,9 @@ long	parse_args(char	**str)
 			exit_prog(1, &listcall()->next);
 		*str += 1;
 	}
-	while (**str == 32 || (**str > 8 && **str < 14))
+	while (**str == ' ' || (**str > 8 && **str < 14))
 		*str += 1;
-	if (**str && (**str > 8 && **str < 14) && (**str != 32))
+	if (**str && (**str > 8 && **str < 14) && (**str != ' '))
 		exit_prog(1, &listcall()->next);
 	return (num);
 }

@@ -6,11 +6,11 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 19:00:54 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/12/28 18:26:46 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/12/29 16:19:33 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {

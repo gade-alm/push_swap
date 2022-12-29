@@ -6,7 +6,7 @@
 #    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/20 17:06:41 by gade-alm          #+#    #+#              #
-#    Updated: 2022/12/28 18:36:55 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/12/29 16:24:43 by gade-alm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ NAME	= push_swap
 
 CC		= cc
 
-CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
+INCLUDES	= -Iincludes -Ilibs/libft -Ilibs/ft_printf
+
+CFLAGS	= -Wall -Wextra -Werror $(INCLUDES) -g -fsanitize=address
 
 RM		= rm -rf
 
